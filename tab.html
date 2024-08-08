@@ -59,35 +59,35 @@
     </style>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script>
-        $(document).ready(function(){
-            // on메서드 동적객체, 정적객체 -> 1.7버전에서 사용하는 메서드
-            // 동적객체 
-            $('#tab').on('click','li:not(.on) button', function(){
-                console.log($(this).index(), $(this).parent().index() );
-                $(this).parent().addClass('on').siblings().removeClass('on');
-            })
-        })
-        // window.onload = function(){
-        //   const  libtns =   document.querySelectorAll('#tab li button')
-        //   console.log(libtns.length)
-        //   libtns.forEach(function(ele, idx){
-        //     ele.addEventListener('click', function(){
-        //         console.log(this.parentElement);
-        //         //this의 부모태그 접근해줘
-        //         this.parentElement.classList.add('on');
-
-        //         let siblings = this.parentElement.parentElement.children;
-        //         //부모태그까지 포함된 상태임
-
-        //         for (let sibling of siblings) {
-        //             if (sibling !== this.parentElement) { // 부모빼고
-        //                 sibling.classList.remove('on');
-        //             }
-        //         }
-                
+        // $(document).ready(function(){
+        //     // on메서드 동적객체, 정적객체 -> 1.7버전에서 사용하는 메서드
+        //     // 동적객체 
+        //     $('#tab').on('click','li:not(.on) button', function(){
+        //         console.log($(this).index(), $(this).parent().index() );
+        //         $(this).parent().addClass('on').siblings().removeClass('on');
         //     })
-        //   })
-        // }
+        // })
+        window.onload = function(){
+          const  libtns =   document.querySelectorAll('#tab li button')
+          console.log(libtns.length)
+          libtns.forEach(function(ele, idx){
+            ele.addEventListener('click', function(){
+                console.log(this.parentElement);
+                //this의 부모태그 접근해줘
+                this.parentElement.classList.add('on');
+
+                let siblings = this.parentElement.parentElement.children;
+                //부모태그까지 포함된 상태임
+
+                for (let sibling of siblings) {
+                    if (sibling !== this.parentElement) { // 부모빼고
+                        sibling.classList.remove('on');
+                    }
+                }
+                
+            })
+          })
+        }
     </script>
 </head>
 <body>
