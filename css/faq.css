@@ -17,6 +17,9 @@ a {
   margin: 0 auto;
 }
 
+#faq {
+  display: none;
+}
 #faq .inner h2 {
   font-size: calc(1rem + 1vw);
 }

@@ -10,6 +10,7 @@ a{ text-decoration: none; color:black}
 }
 
 #faq{
+    display: none;
         .inner{
             h2{ font-size: calc(1rem + 1vw) ;}
             .faqwrap{
